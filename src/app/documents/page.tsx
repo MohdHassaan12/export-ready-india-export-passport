@@ -42,9 +42,9 @@ export default function Documents() {
       {/* Header */}
       <div className="flex justify-between items-start mb-5">
         <div>
-          <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Documents</p>
-          <h1 className="text-2xl font-bold text-slate-900">Document Library</h1>
-          <p className="text-slate-500 text-sm mt-0.5">{filtered.length} of {DOCUMENTS.length} documents shown</p>
+          <p className="text-xs text-charcoal/40 font-semibold uppercase tracking-wider mb-1">Documents</p>
+          <h1 className="text-2xl font-bold text-charcoal">Document Library</h1>
+          <p className="text-charcoal/60 text-sm mt-0.5">{filtered.length} of {DOCUMENTS.length} documents shown</p>
         </div>
         <span className="demo-badge bg-amber-100 border border-amber-300 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase">Demo Data</span>
       </div>
@@ -52,7 +52,7 @@ export default function Documents() {
       {/* Status pills as filter toggles */}
       <div className="flex flex-wrap gap-2 mb-4">
         <button onClick={() => setStatusFilter('All')}
-          className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${statusFilter === 'All' ? 'bg-slate-900 text-white border-slate-900' : 'bg-slate-100 text-slate-700 border-slate-200 hover:border-slate-400'}`}>
+          className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${statusFilter === 'All' ? 'bg-charcoal text-white border-slate-900' : 'bg-stone text-charcoal/80 border-charcoal/20 hover:border-charcoal/40'}`}>
           All ({counts['All']})
         </button>
         {STATUS_OPTIONS.map(s => {
@@ -67,23 +67,23 @@ export default function Documents() {
       </div>
 
       {/* Search + type filter */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-5 flex flex-wrap gap-3 items-center">
+      <div className="bg-white rounded-xl border border-charcoal/20 shadow-sm p-4 mb-5 flex flex-wrap gap-3 items-center">
         <div className="relative flex-1 min-w-48">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal/40" />
           <input value={search} onChange={e => setSearch(e.target.value)}
             placeholder="Search document name, product, supplier…"
-            className="w-full pl-9 pr-3 py-2 text-sm border border-slate-200 rounded-lg bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:bg-white transition" />
+            className="w-full pl-9 pr-3 py-2 text-sm border border-charcoal/20 rounded-lg bg-sand focus:outline-none focus:ring-2 focus:ring-charcoal/30 focus:bg-white transition" />
         </div>
         <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)}
-          className="text-sm border border-slate-200 rounded-lg px-3 py-2 bg-slate-50 text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300">
+          className="text-sm border border-charcoal/20 rounded-lg px-3 py-2 bg-sand text-charcoal/80 focus:outline-none focus:ring-2 focus:ring-charcoal/30">
           {types.map(t => <option key={t}>{t}</option>)}
         </select>
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl border border-charcoal/20 shadow-sm overflow-hidden">
         <table className="w-full text-left text-sm">
-          <thead className="bg-slate-50 text-slate-500 text-xs font-semibold uppercase tracking-wide">
+          <thead className="bg-sand text-charcoal/60 text-xs font-semibold uppercase tracking-wide">
             <tr>
               <th className="px-5 py-3">Document</th>
               <th className="px-5 py-3 hidden md:table-cell">Product</th>
@@ -94,27 +94,27 @@ export default function Documents() {
               <th className="px-5 py-3 w-10"></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-charcoal/10">
             {filtered.map(doc => {
               const cfg = statusConfig[doc.status as DocStatus];
               const Icon = cfg.icon;
               return (
-                <tr key={doc.id} className="hover:bg-slate-50 group transition-colors">
+                <tr key={doc.id} className="hover:bg-sand group transition-colors">
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
-                      <FileText className={`w-4 h-4 shrink-0 ${doc.status === 'Missing' ? 'text-red-400' : 'text-slate-400'}`} />
+                      <FileText className={`w-4 h-4 shrink-0 ${doc.status === 'Missing' ? 'text-red-400' : 'text-charcoal/40'}`} />
                       <div>
-                        <p className="font-medium text-slate-800 text-sm leading-snug">{doc.name}</p>
-                        <p className="text-xs text-slate-400">{doc.supplier} · {doc.size}</p>
+                        <p className="font-medium text-charcoal/90 text-sm leading-snug">{doc.name}</p>
+                        <p className="text-xs text-charcoal/40">{doc.supplier} · {doc.size}</p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-5 py-3.5 hidden md:table-cell text-xs text-slate-500">{doc.product}</td>
+                  <td className="px-5 py-3.5 hidden md:table-cell text-xs text-charcoal/60">{doc.product}</td>
                   <td className="px-5 py-3.5 hidden lg:table-cell">
-                    <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium border border-slate-200">{doc.type}</span>
+                    <span className="text-xs bg-stone text-charcoal/70 px-2 py-0.5 rounded font-medium border border-charcoal/20">{doc.type}</span>
                   </td>
-                  <td className="px-5 py-3.5 hidden xl:table-cell text-xs text-slate-500">{doc.uploaded}</td>
-                  <td className={`px-5 py-3.5 hidden xl:table-cell text-xs font-medium ${doc.status === 'Expiring soon' ? 'text-orange-600' : 'text-slate-500'}`}>{doc.expires}</td>
+                  <td className="px-5 py-3.5 hidden xl:table-cell text-xs text-charcoal/60">{doc.uploaded}</td>
+                  <td className={`px-5 py-3.5 hidden xl:table-cell text-xs font-medium ${doc.status === 'Expiring soon' ? 'text-orange-600' : 'text-charcoal/60'}`}>{doc.expires}</td>
                   <td className="px-5 py-3.5">
                     <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md border text-xs font-semibold ${cfg.color}`}>
                       <Icon className="w-3 h-3" /> {doc.status}
@@ -122,7 +122,7 @@ export default function Documents() {
                   </td>
                   <td className="px-5 py-3.5">
                     {doc.status !== 'Missing' && (
-                      <button className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-400 hover:text-slate-700 p-1 rounded hover:bg-slate-100">
+                      <button className="opacity-0 group-hover:opacity-100 transition-opacity text-charcoal/40 hover:text-charcoal/80 p-1 rounded hover:bg-stone">
                         <Download className="w-4 h-4" />
                       </button>
                     )}
@@ -133,10 +133,10 @@ export default function Documents() {
           </tbody>
         </table>
         {filtered.length === 0 && (
-          <p className="text-center text-sm text-slate-400 py-10">No documents match your filters.</p>
+          <p className="text-center text-sm text-charcoal/40 py-10">No documents match your filters.</p>
         )}
       </div>
-      <p className="text-xs text-slate-400 mt-4 text-center">Demo data — fictional documents.</p>
+      <p className="text-xs text-charcoal/40 mt-4 text-center">Demo data — fictional documents.</p>
     </div>
   );
 }

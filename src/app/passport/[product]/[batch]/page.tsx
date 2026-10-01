@@ -74,32 +74,32 @@ export default function ProductPassport() {
       {/* Top bar */}
       <div className="flex flex-wrap justify-between items-center gap-4 mb-5">
         <div>
-          <p className="text-xs text-slate-400 font-mono mb-1">{productCode} · {batchCode}</p>
-          <h1 className="text-xl font-bold text-slate-900">Digital Product Passport</h1>
+          <p className="text-xs text-charcoal/40 font-mono mb-1">{productCode} · {batchCode}</p>
+          <h1 className="text-xl font-bold text-charcoal">Digital Product Passport</h1>
         </div>
         <div className="flex gap-2">
-          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 shadow-sm">
+          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-charcoal/20 text-charcoal/80 rounded-lg text-sm font-medium hover:bg-sand shadow-sm">
             <Download className="w-4 h-4" /> Download compliance pack
           </button>
-          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 shadow-sm">
+          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-charcoal/20 text-charcoal/80 rounded-lg text-sm font-medium hover:bg-sand shadow-sm">
             <Share2 className="w-4 h-4" /> Share passport
           </button>
         </div>
       </div>
 
       {/* Main passport card */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl border border-charcoal/20 shadow-sm overflow-hidden">
         {/* Passport header */}
-        <div className="bg-slate-900 px-6 py-4 flex items-center justify-between">
+        <div className="bg-charcoal px-6 py-4 flex items-center justify-between">
           <div>
-            <p className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-0.5">Digital Product Passport</p>
+            <p className="text-charcoal/40 text-xs font-semibold uppercase tracking-widest mb-0.5">Digital Product Passport</p>
             <h2 className="text-white font-bold text-lg">{p.productName || 'SS 316 Pump Impeller'}</h2>
           </div>
           <span className="demo-badge bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Demo Data</span>
         </div>
 
         {/* Product identity grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 border-b border-slate-100">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 border-b border-charcoal/10">
           {[
             { label: 'Product', value: p.productName, icon: Layers },
             { label: 'Product code', value: p.productCode, icon: Hash },
@@ -111,49 +111,49 @@ export default function ProductPassport() {
             { label: 'Material', value: p.material, icon: Layers },
             { label: 'HS Code', value: p.hsCode, icon: Hash },
           ].map((field, i) => (
-            <div key={i} className="px-5 py-3.5 border-r border-b border-slate-100 last:border-r-0">
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-0.5">{field.label}</p>
-              <p className="text-sm font-semibold text-slate-800">{field.value}</p>
+            <div key={i} className="px-5 py-3.5 border-r border-b border-charcoal/10 last:border-r-0">
+              <p className="text-xs text-charcoal/40 font-semibold uppercase tracking-wide mb-0.5">{field.label}</p>
+              <p className="text-sm font-semibold text-charcoal/90">{field.value}</p>
             </div>
           ))}
         </div>
 
         {/* QR section */}
-        <div className="flex justify-end px-6 py-3 border-b border-slate-100 bg-slate-50">
+        <div className="flex justify-end px-6 py-3 border-b border-charcoal/10 bg-sand">
           <div className="flex items-start gap-4">
             <div className="text-right">
-              <p className="text-xs text-slate-400 font-mono">/passport/{productCode}</p>
-              <p className="text-xs text-slate-400 font-mono">/{batchCode}/DAT</p>
+              <p className="text-xs text-charcoal/40 font-mono">/passport/{productCode}</p>
+              <p className="text-xs text-charcoal/40 font-mono">/{batchCode}/DAT</p>
             </div>
-            <div className="bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-lg border border-charcoal/20 shadow-sm">
               <QRCodeSVG value={url} size={72} />
             </div>
           </div>
         </div>
 
         {/* 4 quadrant sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-slate-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-charcoal/10">
           {/* Origin */}
-          <div className="p-5 border-b border-slate-100">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Origin</h3>
+          <div className="p-5 border-b border-charcoal/10">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-3">Origin</h3>
             <ul className="space-y-2">
               {p.origin.map((item: any, i: number) => (
                 <li key={i} className="flex items-center gap-2 text-sm">
                   <StatusDot ok={item.ok} warn={item.warn} err={item.err} />
-                  <span className="text-slate-700">{item.label}</span>
+                  <span className="text-charcoal/80">{item.label}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Materials */}
-          <div className="p-5 border-b border-slate-100">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Materials</h3>
+          <div className="p-5 border-b border-charcoal/10">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-3">Materials</h3>
             <ul className="space-y-2">
               {p.materials.map((item: any, i: number) => (
                 <li key={i} className="flex items-center gap-2 text-sm">
                   <StatusDot ok={item.ok} warn={item.warn} err={item.err} />
-                  <span className="text-slate-700">{item.label}</span>
+                  <span className="text-charcoal/80">{item.label}</span>
                 </li>
               ))}
             </ul>
@@ -161,12 +161,12 @@ export default function ProductPassport() {
 
           {/* Quality */}
           <div className="p-5">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Quality</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-3">Quality</h3>
             <ul className="space-y-2">
               {p.quality.map((item: any, i: number) => (
                 <li key={i} className="flex items-center gap-2 text-sm">
                   <StatusDot ok={item.ok} warn={item.warn} err={item.err} />
-                  <span className="text-slate-700">{item.label}</span>
+                  <span className="text-charcoal/80">{item.label}</span>
                 </li>
               ))}
             </ul>
@@ -174,12 +174,12 @@ export default function ProductPassport() {
 
           {/* Sustainability */}
           <div className="p-5">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Sustainability</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-3">Sustainability</h3>
             <ul className="space-y-2">
               {p.sustainability.map((item: any, i: number) => (
                 <li key={i} className="flex items-center gap-2 text-sm">
                   <StatusDot ok={item.ok} warn={item.warn} err={item.err} />
-                  <span className="text-slate-700">{item.label}</span>
+                  <span className="text-charcoal/80">{item.label}</span>
                 </li>
               ))}
             </ul>
@@ -187,8 +187,8 @@ export default function ProductPassport() {
         </div>
 
         {/* Traceability Timeline */}
-        <div className="border-t border-slate-100 p-5">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Traceability Timeline</h3>
+        <div className="border-t border-charcoal/10 p-5">
+          <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-4">Traceability Timeline</h3>
           <div className="space-y-0">
             {p.timeline.map((event: any, i: number) => (
               <div key={i} className="flex gap-4 pb-4 last:pb-0">
@@ -200,10 +200,10 @@ export default function ProductPassport() {
                 </div>
                 <div className="flex-1 pb-0">
                   <div className="flex items-baseline justify-between gap-4">
-                    <p className="text-sm font-semibold text-slate-800">{event.title}</p>
-                    <span className="text-xs text-slate-400 shrink-0">{event.date}</span>
+                    <p className="text-sm font-semibold text-charcoal/90">{event.title}</p>
+                    <span className="text-xs text-charcoal/40 shrink-0">{event.date}</span>
                   </div>
-                  <p className="text-xs text-slate-500 mt-0.5">{event.detail}</p>
+                  <p className="text-xs text-charcoal/60 mt-0.5">{event.detail}</p>
                 </div>
               </div>
             ))}
@@ -211,8 +211,8 @@ export default function ProductPassport() {
         </div>
 
         {/* Documents */}
-        <div className="border-t border-slate-100 p-5">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Attached Documents</h3>
+        <div className="border-t border-charcoal/10 p-5">
+          <h3 className="text-xs font-bold uppercase tracking-widest text-charcoal/60 mb-3">Attached Documents</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
             {p.documents.map((doc: any, i: number) => (
               <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-xs font-medium ${doc.status === 'Verified' ? 'bg-green-50 border-green-200 text-green-800' : doc.status === 'Missing' ? 'bg-red-50 border-red-200 text-red-700' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
@@ -225,8 +225,8 @@ export default function ProductPassport() {
         </div>
 
         {/* Footer note */}
-        <div className="border-t border-slate-100 bg-slate-50 px-5 py-3">
-          <p className="text-xs text-slate-400 text-center">Demo data — fictional company and documents. This passport is not a legal compliance certification.</p>
+        <div className="border-t border-charcoal/10 bg-sand px-5 py-3">
+          <p className="text-xs text-charcoal/40 text-center">Demo data — fictional company and documents. This passport is not a legal compliance certification.</p>
         </div>
       </div>
     </div>

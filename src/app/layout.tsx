@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-newsreader" });
 
 export const metadata: Metadata = {
   title: "ExportReady — India Export Passport",
@@ -14,14 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex h-screen overflow-hidden bg-slate-100 text-slate-900">
+      <body className={`${inter.variable} ${newsreader.variable} font-sans flex h-screen overflow-hidden bg-cream text-charcoal`}>
         <Sidebar />
         <main className="flex-1 overflow-y-auto">
           {children}
           {/* Footer bar */}
-          <div className="border-t border-slate-200 bg-white px-6 py-2 text-xs text-slate-400 flex items-center justify-between mt-8">
-            <span>ExportReady — compliance evidence platform for Indian manufacturers</span>
-            <span className="text-slate-400">All data shown is fictional demo data.</span>
+          <div className="border-t border-sand bg-cream-light px-6 py-4 text-xs text-stone-500 flex items-center justify-between mt-8">
+            <span className="font-serif italic">ExportReady — compliance evidence platform for Indian manufacturers</span>
+            <span>All data shown is fictional demo data.</span>
           </div>
         </main>
       </body>
