@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -16,23 +17,26 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         cream: {
-          DEFAULT: "#F7F5F0",
-          light: "#FCFBF9",
-          dark: "#EFECE6",
+          DEFAULT: "var(--cream)",
+          light: "var(--cream-light)",
+          dark: "var(--cream-dark)",
         },
         sand: {
-          DEFAULT: "#E2DDD3",
-          dark: "#D4CEC3",
+          DEFAULT: "var(--sand)",
+          dark: "var(--sand-dark)",
         },
         charcoal: {
-          DEFAULT: "#1C1917",
-          light: "#292524",
-          lighter: "#44403C",
+          DEFAULT: "var(--charcoal)",
+          light: "var(--charcoal-light)",
+          lighter: "var(--charcoal-lighter)",
+        },
+        stone: {
+          DEFAULT: "var(--stone)",
         },
         terracotta: {
-          DEFAULT: "#D97706",
-          light: "#F59E0B",
-          dark: "#B45309",
+          DEFAULT: "var(--terracotta)",
+          light: "var(--terracotta-light)",
+          dark: "var(--terracotta-dark)",
         }
       },
       boxShadow: {

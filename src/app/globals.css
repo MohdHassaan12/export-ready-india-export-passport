@@ -7,11 +7,50 @@
 :root {
   --background: #f1f5f9;
   --foreground: #0f172a;
+  
+  --cream: #F7F5F0;
+  --cream-light: #FCFBF9;
+  --cream-dark: #EFECE6;
+  
+  --sand: #E2DDD3;
+  --sand-dark: #D4CEC3;
+  
+  --charcoal: #1C1917;
+  --charcoal-light: #292524;
+  --charcoal-lighter: #44403C;
+  
+  --stone: #E5E7EB;
+  
+  --terracotta: #D97706;
+  --terracotta-light: #F59E0B;
+  --terracotta-dark: #B45309;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+
+  --cream: #1C1917;
+  --cream-light: #161412;
+  --cream-dark: #292524;
+  
+  --sand: #292524;
+  --sand-dark: #44403C;
+  
+  --charcoal: #F7F5F0;
+  --charcoal-light: #EFECE6;
+  --charcoal-lighter: #D4CEC3;
+  
+  --stone: #292524;
+
+  --terracotta: #F59E0B;
+  --terracotta-light: #FBBF24;
+  --terracotta-dark: #D97706;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--cream);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
